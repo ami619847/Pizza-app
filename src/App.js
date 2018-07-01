@@ -7,6 +7,10 @@ import Toppings from './components/Toppings';
 import Total from './components/Total';
 import TurboDroneDelivery from './components/TurboDroneDelivery';
 
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+
 import './App.css';
 
 class App extends Component {
@@ -14,16 +18,23 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <h1>Welcome to New Age Pizza</h1>
-          <h2>Build your pizza: </h2>
+
+          <AppBar position="static" color="default">
+            <Toolbar>
+              <Typography variant="title" color="secondary">
+                Welcome to New Age Pizza
+              </Typography>
+            </Toolbar>
+          </AppBar>
+
+          <Typography variant="headline" color="inherit">Build your pizza:</Typography>
 
           <Base />
           <Sauce />
           <Toppings />
           <TurboDroneDelivery />
           <Total />
-
-
+          
         </div>
       </Provider>
     );

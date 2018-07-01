@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { addSauce } from '../actions/pizza';
+import Button from '@material-ui/core/Button';
 
 const sauceData = {
   "White": {
@@ -51,7 +52,8 @@ class Sauce extends React.PureComponent {
               <option value={sauce} key={sauce}>{sauce}</option>) }
             </select>
           </label>
-          <input type="submit" value="Add"/>
+          <br/>
+          <Button variant="raised" color="primary" type="submit">Add Sauce</Button>
         </form>
       </div>
     );

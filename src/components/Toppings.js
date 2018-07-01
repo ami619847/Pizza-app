@@ -41,7 +41,8 @@ class Toppings extends React.PureComponent {
   render() {
     return (
       <div className="topping">
-        <form onSubmit={this.handleSubmit}>Select up to 3 toppings:
+        <form onSubmit={this.handleSubmit}>
+          <p>Select up to 3 toppings: </p>
             {[...Array(3)].map((topping, id) =>
               <select onChange={this.handleChange} key={id}>
                 <option value="">Select your topping {id+1}</option>

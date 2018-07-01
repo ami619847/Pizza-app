@@ -2,6 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { addBase } from '../actions/pizza';
 
+import Button from '@material-ui/core/Button';
+
 const baseData = {
   "20cm": {
     baseType: "20cm NY Style",
@@ -51,7 +53,8 @@ class Base extends React.PureComponent {
               <option value={base} key={base}>{base}</option>) }
             </select>
           </label>
-          <input type="submit" value="Add"/>
+          <br/>
+          <Button variant="raised" color="primary" type="submit">Add Base</Button>
         </form>
       </div>
     );
