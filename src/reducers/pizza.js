@@ -1,15 +1,12 @@
 import ADD_BASE from '../actions/pizza';
 import ADD_SAUCE from '../actions/pizza';
 import ADD_TOPPING from '../actions/pizza';
-// import ADD_DELIVERY from '../actions/pizza';
+import ADD_DELIVERY from '../actions/pizza';
 
 const initialState = {
   base: '',
   sauce: '',
-  // topping: [],
-  // topping1: '',
-  // topping2: '',
-  // topping3: '',
+  toppings: [],
   delivery: '',
   total: 0
 }

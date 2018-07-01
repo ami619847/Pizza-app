@@ -6,8 +6,7 @@ class Total extends React.PureComponent {
     return (
       <div>
         <h2>Total price: </h2>
-         <p>{Number(this.props.total).toFixed(2)}€</p>
-        <h2>{}</h2>
+         <p>{(this.props.total).toFixed(2)}€</p>
       </div>
     )
   }
