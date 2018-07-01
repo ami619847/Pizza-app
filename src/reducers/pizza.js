@@ -7,7 +7,7 @@ const initialState = {
   base: '',
   sauce: '',
   toppings: [],
-  delivery: '',
+  delivery: false,
   total: 0
 }
 
@@ -15,16 +15,26 @@ const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
 
     case 'ADD_BASE':
+    // console.log(state)
+    if (state.base) {
+      state.total = state.total - state.base.basePrice
+      state.base = {}
+    }
       return {
         ...state,
-        base: state.base = action.payload.base,
+        base: state.base = action.payload,
         total: state.total = state.total + action.payload.basePrice
       }
 
     case 'ADD_SAUCE':
+      // console.log(state)
+      if (state.sauce) {
+        state.total = state.total - state.sauce.saucePrice
+        state.sauce = {}
+      }
       return {
         ...state,
-        sauce: state.sauce = action.payload.sauce,
+        sauce: state.sauce = action.payload,
         total: state.total = state.total + action.payload.saucePrice
       }
 
@@ -36,9 +46,14 @@ const reducer = (state = initialState, action = {}) => {
       }
 
     case 'ADD_DELIVERY':
+      // console.log(state)
+      if (state.delivery) {
+        state.total = state.total - state.total*0.1
+        state.delivery = {}
+      }
       return {
         ...state,
-        delivery: state.delivery = action.payload,
+        delivery: state.delivery = true,
         total: state.total = state.total + state.total*0.1
       }
 
